@@ -2,17 +2,20 @@ import React from "react"
 
 const SearchBar = (props) => {
   const [input, setInput] = React.useState(null);
-  const [filteredItems, setFilteredItems] = React.useState(null);
+  const onFilter = props.onFilter;
   const items = props.items;
   const handleInputChange = (search) => {
     const newInput = search.toLowerCase()
     setInput(newInput);
-    let itemList = items.filter(
-      (member) => {
-        return member.title.toLowerCase().indexOf(newInput) !== -1
-      }
-    )
-    setFilteredItems(itemList);
+    let itemList = [];
+    if (newInput) {
+      itemList = items.filter(
+        (member) => {
+          return member.title.toLowerCase().indexOf(newInput) !== -1
+        }
+      )
+    }
+    onFilter(itemList);
   } 
   return (
     <div className="main-search">

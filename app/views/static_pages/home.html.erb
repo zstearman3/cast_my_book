@@ -1,1 +1,1 @@
-<%= react_component("Home", { signed_in: user_signed_in? }) %>
+<%= react_component("Home", { signed_in: user_signed_in?, books: Book.all.select(:id, :title) }) %>

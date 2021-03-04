@@ -1,1 +1,48 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+/** Header **/
+.navbar{
+  background-color: #013220;
+  a h2{
+    color: #fff;
+  }
+  .navbar-nav{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    a{
+      color: #fff;
+      &:hover {
+        color: #ccc;
+      }
+    }
+  }
+  .navbar-toggler{
+    border: 1px solid #fff;
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+  }
+}
+
+/** Home Page**/
+.page-container{
+  padding: 5px;
+}
+
+.home-search{
+  text-align: center;
+  margin: auto;
+  p{
+    margin-top: 5px;
+  }
+}
+
+/** Search Bar **/
+.search-bar{
+  width: 20rem;
+  background: #F2F1F9;
+  border-radius: 5px;
+  padding: 0.5rem;
+  text-align: center;
+}

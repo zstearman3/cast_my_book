@@ -1,5 +1,7 @@
 import React from "react"
 import FormField from "./common/FormField"
+import CharacterRow from "./CharacterRow"
+import NewCharacterRow from "./NewCharacterRow"
 
 const NewBook = (props) => {
   const [author, setAuthor] = React.useState(null);
@@ -19,10 +21,9 @@ const NewBook = (props) => {
     })
   }
   
-  const addCharacter = () => {
-    let current_characters = [...characters]
-    current_characters.push({name: "Harry Potter"})
-    setCharacters(current_characters)
+  const addCharacter = (newCharacter) => {
+    let currentCharacters = [...characters, newCharacter]
+    setCharacters(currentCharacters)
   }
   
   return(
@@ -52,15 +53,10 @@ const NewBook = (props) => {
           <tbody>
             { characters.map((character, index) => {
               return(
-                <tr>
-                  <td>{character.name}</td>
-                </tr>
+                <CharacterRow character={character} key={index}/>
               )
             })}
-            <tr className="new-character-row">
-              <td><input placeholder="Name"/></td>
-              <td><button onClick={addCharacter}>Add</button></td>
-            </tr>
+            <NewCharacterRow callback={addCharacter} />
           </tbody>
         </table>
         <button onClick={handleSubmit}>Submit</button>

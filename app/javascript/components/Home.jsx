@@ -24,7 +24,7 @@ const Home = (props) => {
             )
           })}
         </div>
-        <p>Can't find what you want?<a href=""> Make a new one!</a></p>
+        <p>Can't find what you want?<a href="/books/new"> Make a new one!</a></p>
       </div>
     </div>
   );

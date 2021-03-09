@@ -11,7 +11,7 @@ const Dropdown = (props) => {
       <option></option>
       { options.map((option, index) => {
         return(
-          <option value={option}>{option}</option>
+          <option value={option} key={option}>{option}</option>
         )
       })}
     </select>

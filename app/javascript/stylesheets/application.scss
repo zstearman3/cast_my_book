@@ -63,16 +63,18 @@
     width: 100%;
     margin-bottom: 5px;
     td{
-      border: 1px solid #999;
-      border-radius: 2px;
-      padding: 0px;
+     padding: 2px;
     }
     .character-input{
       display: block;
-      width: 100%;
+      width: 98%;
+      margin: auto;
+      height: 30px;
+      box-sizing: border-box;
       font-size: 16px;
       padding: 2px;
-      border: none;
+      border-radius: 4px;
+      border: 1px solid #ced4da;
     }
     button{
       float: right;

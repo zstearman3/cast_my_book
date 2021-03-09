@@ -8,8 +8,10 @@ const CharacterRow = (props) => {
       <td>{character.name}</td>
       <td>{character.role}</td>
       <td>{character.gender}</td>
-      <td>{character.age}</td>
+      <td>{character.age_range}</td>
       <td>{character.skin_color}</td>
+      <td>{character.hair_color}</td>
+      <td>{character.body_type}</td>
       <td>{character.personality_type}</td>
     </tr>
   );

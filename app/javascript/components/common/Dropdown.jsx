@@ -1,6 +1,6 @@
 import React from "react"
 
-const Dropdwon = (props) => {
+const Dropdown = (props) => {
   const extraClasses = props.extraClasses;
   const field = props.field;
   const options = props.options;
@@ -18,4 +18,4 @@ const Dropdwon = (props) => {
   );
 }
 
-export default Dropdwon
+export default Dropdown

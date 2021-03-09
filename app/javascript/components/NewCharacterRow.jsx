@@ -36,7 +36,7 @@ const NewCharacterRow = (props) => {
         onChange={updateCharacter}/>
       </td>
       <td><Dropdown 
-        field="age"
+        field="age_range"
         extraClasses="character-input"
         options={["Child", "Teen", "Young Adult", "Middle Aged", "Old Adult"]}
         onChange={updateCharacter}/>
@@ -48,9 +48,21 @@ const NewCharacterRow = (props) => {
         onChange={updateCharacter}/>
       </td>
       <td><Dropdown 
+        field="hair_color"
+        extraClasses="character-input"
+        options={["Dark", "Red", "Blonde"]}
+        onChange={updateCharacter}/>
+      </td>
+      <td><Dropdown 
+        field="body_type"
+        extraClasses="character-input"
+        options={["Petite", "Slender", "Atheletic", "Overweight"]}
+        onChange={updateCharacter}/>
+      </td>
+      <td><Dropdown 
         field="personality_type"
         extraClasses="character-input"
-        options={["Funny", "Heroic", "Dramatic", "Evil"]}
+        options={["Funny", "Heroic", "Nerdy", "Dramatic", "Evil"]}
         onChange={updateCharacter}/>
       </td>
       <td><button onClick={addCharacter}>Add</button></td>

@@ -6,7 +6,10 @@ class CreateCharacters < ActiveRecord::Migration[6.1]
       t.string :gender
       t.string :age_range
       t.string :skin_color
+      t.string :hair_color
+      t.string :body_type
       t.string :personality_type
+      t.belongs_to :book
       t.timestamps
     end
   end

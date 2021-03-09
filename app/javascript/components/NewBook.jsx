@@ -16,7 +16,8 @@ const NewBook = (props) => {
         book: {
           author: author,
           title: title
-        }
+        },
+        characters: JSON.stringify(characters)
       }
     })
   }
@@ -47,6 +48,8 @@ const NewBook = (props) => {
               <th>Gender</th>
               <th>Age</th>
               <th>Skin Color</th>
+              <th>Hair Color</th>
+              <th>Body Type</th>
               <th>Personality</th>
             </tr>
           </thead>

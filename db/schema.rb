@@ -28,9 +28,13 @@ ActiveRecord::Schema.define(version: 2021_03_05_175837) do
     t.string "gender"
     t.string "age_range"
     t.string "skin_color"
+    t.string "hair_color"
+    t.string "body_type"
     t.string "personality_type"
+    t.bigint "book_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_characters_on_book_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -51,3 +51,31 @@
   text-align: center;
   margin: auto;
 }
+  
+/** Forms **/
+.form-container{
+  max-width: 1200px;
+  margin: auto;
+  .field-container{
+    padding-bottom: 5px;
+  }
+  .characters-table{
+    width: 100%;
+    margin-bottom: 5px;
+    td{
+      border: 1px solid #999;
+      border-radius: 2px;
+      padding: 0px;
+    }
+    .character-input{
+      display: block;
+      width: 100%;
+      font-size: 16px;
+      padding: 2px;
+      border: none;
+    }
+    button{
+      float: right;
+    }
+  }
+}

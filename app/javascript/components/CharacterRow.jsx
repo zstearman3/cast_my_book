@@ -13,6 +13,7 @@ const CharacterRow = (props) => {
       <td>{character.hair_color}</td>
       <td>{character.body_type}</td>
       <td>{character.personality_type}</td>
+      <td><button>Remove</button></td>
     </tr>
   );
 }

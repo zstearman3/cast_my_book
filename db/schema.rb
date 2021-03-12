@@ -10,16 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_05_175837) do
+ActiveRecord::Schema.define(version: 2021_03_11_185633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "actors", force: :cascade do |t|
+    t.string "name"
+    t.string "imdb_id"
+    t.string "picture_url"
+    t.string "fame"
+    t.string "gender"
+    t.string "age_range"
+    t.string "skin_color"
+    t.string "hair_color"
+    t.string "body_type"
+    t.text "personality_types", array: true
+    t.datetime "created_at", precision: 6
+    t.datetime "updated_at", precision: 6
+    t.string "search_value"
+  end
 
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "search_value"
+  end
+
+  create_table "casts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "book_id"
+    t.datetime "created_at", precision: 6
+    t.datetime "updated_at", precision: 6
+    t.index ["book_id"], name: "index_casts_on_book_id"
+    t.index ["user_id"], name: "index_casts_on_user_id"
   end
 
   create_table "characters", force: :cascade do |t|
@@ -35,6 +61,17 @@ ActiveRecord::Schema.define(version: 2021_03_05_175837) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_characters_on_book_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.bigint "cast_id"
+    t.bigint "actor_id"
+    t.bigint "character_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["actor_id"], name: "index_roles_on_actor_id"
+    t.index ["cast_id"], name: "index_roles_on_cast_id"
+    t.index ["character_id"], name: "index_roles_on_character_id"
   end
 
   create_table "users", force: :cascade do |t|

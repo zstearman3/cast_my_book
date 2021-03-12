@@ -1,5 +1,10 @@
 class Book < ApplicationRecord
+  has_many :characters
+  has_many :casts
+  
   validates_uniqueness_of :title, case_sensitive: false
+  
+  before_save :set_search_value
   
   def create_characters characters
     errors = []
@@ -19,6 +24,12 @@ class Book < ApplicationRecord
     end
     Character.insert_all(records)
     [true, errors]
+  end
+  
+  private
+  
+  def set_search_value
+    self.search_value = self.title.downcase if self.title.present?
   end
   
 end

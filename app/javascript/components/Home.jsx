@@ -10,6 +10,7 @@ const Home = (props) => {
       <div className="home-search col-md-8 offset-md-2">
         <h2>Search for a Book</h2>
         <SearchBar
+          title = "Books"
           items={books}
           onFilter={setFilteredBooks}
         />
@@ -17,7 +18,7 @@ const Home = (props) => {
           { filteredBooks.slice(0, 10).map((book, index) => {
             return(
               <div className="row" key={index + book.title}>
-                <a href={book.id} className="search-result">
+                <a href={`/casts/new?book_id=${book.id}`} className="search-result">
                   {book.title} - {book.author}
                 </a>
               </div>

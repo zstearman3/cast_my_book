@@ -4,6 +4,7 @@ const SearchBar = (props) => {
   const [input, setInput] = React.useState(null);
   const onFilter = props.onFilter;
   const items = props.items;
+  const title = props.title;
   const handleInputChange = (search) => {
     const newInput = search.toLowerCase()
     setInput(newInput);
@@ -11,7 +12,7 @@ const SearchBar = (props) => {
     if (newInput) {
       itemList = items.filter(
         (member) => {
-          return member.title.toLowerCase().indexOf(newInput) !== -1
+          return member.search_value.toLowerCase().indexOf(newInput) !== -1
         }
       )
     }
@@ -20,7 +21,7 @@ const SearchBar = (props) => {
   return (
     <div className="main-search">
       <input className="search-bar"
-        placeholder={"Search Books"}
+        placeholder={"Search " + title}
         onChange={() => handleInputChange(event.target.value)}
       />
     </div>

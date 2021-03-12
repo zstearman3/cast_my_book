@@ -5,6 +5,7 @@ import Role from "./Role"
 const RoleCreator = (props) => {
   const character = props.character;
   const actors = props.actors;
+  const handleCreate = props.handleCreate;
   const [filteredActors, setFilteredActors] = React.useState([]);
   const [role, setRole] = React.useState(
     { 
@@ -12,6 +13,10 @@ const RoleCreator = (props) => {
       actor: null 
     });
     
+  React.useEffect(() => {
+    handleCreate(role);
+  }, [role])
+  
   const setActor = (actor) => {
     setRole(role => {
       return {...role, actor: actor}
@@ -20,8 +25,8 @@ const RoleCreator = (props) => {
   
   if (role.actor == null) {
     return(
-      <div className="new-role-container">
-        <p>{character.name}</p>
+      <div className="new-role-container col-md-6">
+        <h2>{character.name}</h2>
         <SearchBar
           title="Actors"
           items={actors}

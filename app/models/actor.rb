@@ -1,6 +1,8 @@
 class Actor < ApplicationRecord
   before_save :set_search_value
   
+  validates :name, uniqueness: true
+  
   private
   
   def set_search_value

@@ -81,3 +81,33 @@
     }
   }
 }
+
+/** Cast Creator **/
+
+.cast-container{
+  .cast-header{
+    text-align: center;
+  }
+  .new-role-container{
+    input{
+      display: block;
+      margin: auto;
+    }
+    button{
+      width: 20rem;
+      color: white;
+      background-color: #013220;
+      border: none;
+      padding: 10px;
+    }
+  }
+  .role-container, .new-role-container{
+    text-align: center;
+    margin-top: 20px;
+    .actor-container{
+      img{
+        max-width: 150px;
+      }
+    }
+  }
+}

@@ -51,6 +51,18 @@
   text-align: center;
   margin: auto;
 }
+
+/** Buttons **/
+.save-button{
+  width: 75%;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  display: block;
+  background-color: #013220;
+  color: white;
+  border: 1px white solid;
+  border-radius: 4px;
+}
   
 /** Forms **/
 .form-container{

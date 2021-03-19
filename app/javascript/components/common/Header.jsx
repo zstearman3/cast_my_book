@@ -16,7 +16,7 @@ class Header extends React.Component {
     if (isLoggedIn) {
       navLinks = <NavLink title="My Casts" url="/casts" />;
     } else {
-      navLinks = <NavLink title="Login" url="users/sign_in" />;
+      navLinks = <NavLink title="Login" url="/users/sign_in" />;
     }
     return (
       <nav className="navbar navbar-expand-lg">

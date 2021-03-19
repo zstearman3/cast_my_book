@@ -10,6 +10,7 @@ const RoleCreator = (props) => {
   const [role, setRole] = React.useState(
     { 
       character: character.name,
+      character_id: character.id,
       actor: null 
     });
     

@@ -14,7 +14,18 @@ class CastsController < ApplicationController
   def create
     @cast = Cast.new(cast_params)
     roles = JSON.parse(params[:roles])
-    binding.pry
+    unless @cast.save
+      flash.now[:alert] = "Cast cannot be saved"
+      render 'new'
+    end
+    roles.each do |role| 
+      role[:cast_id] = @cast.reload.id
+      role[:created_at] = Time.now
+      role[:updated_at] = Time.now
+    end
+    Role.insert_all(roles)
+    flash[:notice] = "Your cast has been saved... I just haven't built a way to view it yet"
+    redirect_to :root
   end
   
   private 

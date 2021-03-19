@@ -12,7 +12,11 @@ const NewCast = (props) => {
     if (newRole.actor === null) {
       return
     }
-    let updatedCast = [...cast, newRole]
+    let updatedCast = [...cast]
+    updatedCast.push({
+      actor_id: newRole.actor.id,
+      character_id: newRole.character_id
+    })
     setCast(updatedCast);
   }
   
@@ -54,8 +58,8 @@ const NewCast = (props) => {
             )
           })}
         </div>
+        <button className="save-button" onClick={handleSave}>Save</button>
       </div>
-      <button className="save-button" onClick={handleSave}>Save</button>
     </div>
   )
 }
